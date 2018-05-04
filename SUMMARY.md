@@ -4,7 +4,7 @@
 * [HTML](html.md)
   * [document structure](html/document-structure.md)
   * [head](html/head.md)
-  * body
+  * [body](html/body.md)
 * css
-  * select
+  * [selecter](select.md)
 
