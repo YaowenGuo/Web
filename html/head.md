@@ -213,3 +213,5 @@ css样式资源是最典型的情况之一
 html新增  | 否
 HTML5中变化 | 新增size，原有的charset、rev、target属性在html5中不再使用。
 习惯样式   | 无
+
+### script 使用脚本
