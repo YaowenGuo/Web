@@ -5,7 +5,7 @@
   * [head](html/head.md)
   * [document structure](html/document-structure.md)
   * [organization content](html/organization-content.md)
-  * [body](html/body.md)
+  * [table](html/table.md)
 * css
   * [selecter](select.md)
 * mysql
