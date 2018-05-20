@@ -7,6 +7,8 @@
   * [organization content](html/organization-content.md)
   * [table](html/table.md)
   * [form](html/form.md)
+  * [tag text](html/tag-text.md)
+  * [embedded content](html/embedded-content.md)
 * css
   * [selecter](select.md)
 * mysql

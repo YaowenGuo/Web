@@ -1,4 +1,4 @@
-# form 表单
+    # form 表单
 
 [TOC]
 
@@ -104,24 +104,30 @@ input元素的属性多大29个，具体哪些可用取决于type属性的值。
     - submit, reset, button: 作为按钮使用。它们可用的属性和 button 元素相同。
     - password: 隐藏用户输入的内容。可以配合使用的属性值：maxlength、pattern、placeholder、readlonly、required、size、value
     - number: 只能输入数字（整数或浮点数甚至科学计数法）。可以使用的额外属性：list、min、max、readlonly、required、step、value。
-    - email: 邮箱格式
-    - tel: 电话号码
-    - url: 完全限定的 url 格式
-    - datatime: 带时区信息的世界时（包括日期和时间）
-    - datatime-local: 不带时区信息的世界时（包括日期和时间）
-    - date: 日期
-    - month: 年和月
-    - time: 时间
-    - week: 年及星期
-    - color: 颜色
-    - range: 将输入内容限制在一个数值范围内。
-    - checkbox: 作为只能选择是否的输入类型
-    - radio: 作为多选一的单选输入类型
+    - email: 邮箱格式； tel: 电话号码； url: 完全限定的 url 格式。配合使用的属性有：list、maxlength、pattern、placeholder、readonly、required、size、value。email 还支持一个 multiple 的属性，用于接受多个电子邮件地址。
+
+    - datatime: 带时区信息的世界时（包括日期和时间）2011-07-19T16:49:39.491Z
+    - datatime-local: 不带时区信息的世界时（包括日期和时间）2011-07-19T16:49:39.491
+    - date: 日期 2011-07-19
+    - month: 年和月 2011-07
+    - time: 时间 16:49:39.491
+    - week: 年及星期 2011-W30
+    > 日期和时间是出了名的难题，关于 date 类型的规范里理想状态相距甚远。规范中的日期格式来自规定非常严格的 RFC3399。 这与实际使用中许多地方日期格式大相径庭。例如，很少有人知道datatime格式中的T表示时间段的开始，以及其中的Z表示Zulu时区。 不过还好，现在主流浏览器都有一个图形化的日历框功用户使用，不需要用户手动输入。
+
+    > 可以使用的额外属性： list、min、max、readonly、required、step、value。
+
+    - color: 颜色，只能接受#开头的16进制数字表示。颜色名字还不支持。可喜的是，现在浏览器都有一个颜色框弹出可供使用。只需要点击鼠标选择颜色就行了。不需要手动输入数值。
+    - range: 将输入内容限制在一个数值范围内。显示为一个拖动条。
+    - checkbox: 布尔值。作为只能选择是/否的输入类型。 只有在选中时，才会向服务器提交该项数据。配合使用的属性：checked、required、 value（选中时提交给服务器的数据值，默认为on）。
+    - radio: 单选按钮。作为多选一的单选输入类型。将一组input的name设置为相同，则相同name的 radio 型input只能选中其一。被选中的 radio 的 value 将会被提交，其他的则不会。
     - radiobutton: 将输入限制为一组固定选项中进行选择。
-    - search: 搜索类型
-    - hidden: 隐藏
-    - image: 上传图片
-    - file: 上传图片， 并将form的 enctype 属性设置为 multipart/form-data
+    - search: 搜索类型，额外属性与text型相同。
+    - hidden: 隐藏，对于提交数据的主键非常有用。
+    > 只有那些不涉及机密或安全原因需要隐藏的数据才适合使用这样隐藏在用户页面。用户只要查看 HTML代码就能看到隐藏的元素。而且该元素的值是以明文形式展示在客户端的。大多数WEb引用程序框架都能讲机密数据存放在服务器上，然后根据会话标识符（一般为cookie）将请求与它关联。
+
+    - image: 显示为一张图像按钮，点击它可以提交表单。提交时会同时提交用户点击的位置相对图图像左上角的坐标。支持的额外属性有：alt、 formaction、 formenctype、 formmethod、 formtarget、 formnovalidate、 height、 width、 src。
+
+    - file: 上传图片， 并将form的 enctype 属性设置为 multipart/form-data。配合使用的属性有: accept、 multiple、 required。
 - dirname: 指定内容文字方向。该属性值同样会传输到服务器。Firefox还不支持。
 - list: 关联提示列表datalist元素的id
 - size: 通过指定文本框中可见的字符数目设置其宽度（英文字母数量）
@@ -130,11 +136,22 @@ input元素的属性多大29个，具体哪些可用取决于type属性的值。
 - readonly: 只读以组织用户编辑其内容。不会改变外观。应该慎重使用这个元素，因为看起来没有什么不同，却不能编辑，这会让用户迷惑。
 - disabled: 禁用输入框。显示为灰色，并且不会被提交。如果想要提交，应该考虑使用hedden型input元素。
 - pattern: 指定一个用于输入验证的正则表达式
-- required: 表示用于必须输入一个值，否则无法通过验证
+- required: 表示用于必须输入一个值，否则无法进行提交。多个设置了required未输入内容时，仅提示第一个。外观和逻辑不受控制。
 - placeholder: 设置一段提示文字告诉用户应该输入什么类型的数据
 - min: 可以接受的最小值
 - max: 可以接受的最大值
 - step: 上下调节数值的步长
+- alt: 提供元素的说明。对需要借助残障辅助技术的用户很有用。
+- formaction:
+- formmethod:
+- formenctype:
+- formtarget:
+- formnovalidate:
+- height: 以像素为单位设置图像的高度
+- width: 以像素为单位设置图像的宽度
+- src: 指定要显示的图像的url
+- accept: MIME 类型。
+- multiple: 接受多个输入值。
 
 
 ## button 表单的提交和重置
@@ -260,3 +277,112 @@ button不仅可以用在表单中，还可以用在表单之外，作为普通b
 
 包含在 datalist 元素中的每一个option 元素都代表一个供用户选择的值。其value 属性值在该元素代表的选项被选中时，就是input所用的数据值。
 - 显示在value列表中的未必就是value的属性值，还可以是另外设定的一条说明信息，它可以用label属性设置，也可以作为option的内容。但是这在不同浏览器下的显示效果存在很大不同，而且，显示的内容和选中后填入input内的值不一样，很容易引起用户的疑惑。
+
+
+## select 选择列表
+
+它会生成一个下拉列表的形式，当点击时展开列表。改元素的name、disabled、form、autofocus、required、multipart 属性和input元素的作用相同。size 用来设置要显示给用户的数目，多余的内容可以通过滚动列表查看。
+
+元素      | select
+-------- | ----
+元素类型  | 短语
+父元素    | 任何可以包含短语元素的元素
+局部属性  | name、disabled、form、autofocus、required、multipart、size
+内容     | option和optiongroup元素
+标签用法  | 双标签
+html新增  | 否
+HTML5中变化 | form、autofocus和required 为H5新增。
+默认样式   | 无，因浏览器而异。
+
+## optgroup 给select子元素建立结构
+
+optgroup 元素可以在select 元素的内容中建立一定的结构。将 option 分组并未整组选项提供一个小标题。disabled 属性可以用来组织选择组内的任何内容。
+
+元素      | optgroup
+-------- | ----
+元素类型  | 无
+父元素    | select 元素
+局部属性  | label，disabled
+内容     | option元素
+标签用法  | 双标签
+html新增  | 否
+HTML5中变化 | 无
+默认样式   | 无
+
+```
+<select id="fave" name="fave">
+    <optgroup label="Top Choices">
+        <option value="apples" label="Apples">Apples</option>
+        <option value="oranges" label="Oranges">Oranges</option>
+    </optgroup>
+    <optgroup label="Others">                        
+        <option value="cherries" label="Cherries">Cherries</option>
+        <option value="pears" label="Pears">Pears</option>
+    </optgroup>
+</select>
+```
+
+## testarea 输入多行文字
+
+生成一个可拖拽的多行文本框。
+
+元素      | textarea
+-------- | ----
+元素类型  | 短语
+父元素    | 任何可以包含短语元素的元素，但通常是form元素。
+局部属性  | name、disabled、form、readonly、maxlength、autofocus、required、placeholder、dirname、rows、cols和wrap
+内容     | 文本，即输入的内容
+标签用法  | 双标签
+html新增  | 否
+HTML5中变化 | 新增 form、autofocus、required、placeholder和wrap
+默认样式   | 无
+
+- rows cols: 用行和列（英文字母）计算的大小。
+- wrap: 控制用户输入的文字中插入换行符的方式。支持hard和soft值。当设置为hard时，所提交文字的每行字符数都不超过cols设置的数目。
+
+## output 计算结果
+
+表示计算结果
+
+元素      | output
+-------- | ----
+元素类型  | 短语
+父元素    | 任何可以包含短语元素的元素。
+局部属性  | name、form、for
+内容     | 短语元素
+标签用法  | 双标签
+html新增  | 是
+HTML5中变化 | 无
+默认样式   | output {display: inline; }
+
+## keygen 生成公钥私钥对
+
+这是公开密钥加密技术中的一个重要功能，公开密钥是包括客户端证书和SSL在内的众多Web安全技术的基础。提交表单时，该元素会生成一对新的密钥。公钥被发送到服务器，私钥被浏览器保留并保入用户的密钥仓库，
+
+元素      | keygen
+-------- | ----
+元素类型  | 短语
+父元素    | 任何可以包含短语元素的元素。
+局部属性  | challenge、keytype、autofocus、name、disabled和form
+内容     | 无
+标签用法  | 虚元素形式
+html新增  | 是
+HTML5中变化 | 无
+默认样式   | 无
+
+- keytype: 现在只支持RSA一种
+- chellenge: 指定一条与公钥一起发送给服务器的密钥管理口令（challenge phrase）。
+
+***查询各浏览其支持的情况，确定支持良好在使用***
+
+## 输入验证
+H5 引入了对输入验证的支持。设计者可以告诉浏览器自己想要什么类型的数据，然后浏览器会在提交表单之前使用这些信息检查用户的输入是否有效。要是输入的有问题，浏览器会提醒用户进行修改，
+
+- 浏览器输入验证就是能够理解得到反馈，对于有问题的数据，不会因为网络问题产生延迟响应用户操作，带来良好体验。同时也能够减轻服务器负担。
+- 浏览器所做的验证只能是对服务器验证的补充，不能代替后者。首先用户的浏览器未必支持输入验证。其次，恶意者可以通过搅拌直接把数据发送给服务器从而绕过验证。
+
+
+对输入验证的支持
+- required： textarea、select、input(text、password、checkbox、radio、file、datatime、datatime-local、data、time、month、week、number、email、url、search、url及tel型)
+- min、max：intpu(datatime、datatime-local、data、month、time、week、number及range型)。
+- pattern: input(text、password、email、url、search及tel型)。
