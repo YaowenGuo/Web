@@ -44,6 +44,20 @@ html新增  | 否
 HTML5中变化 | 新增novalidate和autocomplate 属性
 默认样式   | form {display: block; margin-top: 0em; }
 
+> action 执行请求的提交地址 onsubmit执行提交前的 js 函数。 method 请求方法
+
+```
+<form method="post" id="bug-report-form" action="url" onsubmit="return checkInput()" method="post">
+</form>
+```
+
+**如果 action 没有写的话，默认提交到当前页面的url，并且 `<input>` 标签的name值作为key, 输入值作为value。**
+
+**onsubmit 在提交之前会执行，并且并会根据函数的返回结果来确定 submit 是否执行**
+
+**给表单绑定 js 方法时，必须return false 才能终止 action 的进一步执行，return null照样会继续执行。**
+
+
 > form 属性
 
 - action: 指定在提交表单数据时，应该把用户的数据发送到什么地方。如果没有设置，浏览器将会把数据发送到当前文档的URL。
@@ -153,6 +167,22 @@ input元素的属性多大29个，具体哪些可用取决于type属性的值。
 - accept: MIME 类型。
 - multiple: 接受多个输入值。
 
+
+> input 背景提示
+
+```
+<input placeholder="提示文字即可">
+
+
+input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #aab2bd;
+    /* placeholder字体大小  */
+    font-size: 12px;
+    /* placeholder位置  */
+    text-align: left;
+}
+```
 
 ## button 表单的提交和重置
 
