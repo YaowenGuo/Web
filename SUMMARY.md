@@ -10,9 +10,8 @@
   * [tag text](html/tag-text.md)
   * [embedded content](html/embedded-content.md)
 * CSS3 (Cascading Style Sheets)
-  * [selecter](css3/selecter.md)
+  * [selector](css3/selecter.md)
 * [CSS 层叠样式表 \(Cascading Style Sheets\)](css-ceng-die-yang-shi-biao-cascading-style-sheets.md)
-  * [选择器](css-ceng-die-yang-shi-biao-cascading-style-sheets/xuan-ze-qi.md)
   * [继承、层叠、特殊性、重要性](css-ceng-die-yang-shi-biao-cascading-style-sheets/ji-cheng-3001-ceng-die.md)
   * [盒子模型](css-ceng-die-yang-shi-biao-cascading-style-sheets/he-zi-mo-xing.md)
   * [布局模型](css-ceng-die-yang-shi-biao-cascading-style-sheets/bu-ju-mo-xing.md)
@@ -20,3 +19,5 @@
   * [QA](css-ceng-die-yang-shi-biao-cascading-style-sheets/qa.md)
 * mysql
   * [musqldump](mysql/data_export.md)
+  * [show message](mysql/show.md)
+  * [select](mysql/select.md)
