@@ -25,7 +25,7 @@ p{
 
 ##### 内联式
 内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：
-```css
+```
 <p style="color:red">这里文字是红色。</p>
 注意要写在元素的开始标签里，下面这种写法是错误的：
 <p>这里文字是红色。</p style="color:red">
@@ -38,7 +38,7 @@ css 样式由选择符和声明组成，而声明又由属性和值组成，如�
 ![](/assets/52fde5c30001b0fe03030117.jpg)
 ##### 嵌入式
 嵌入式是使用单独的<style type="text/css"> </style> 标签内写样式。例如给span标签加样式。
-```css
+```
 <style type="text/css">
 span{
 color:red;

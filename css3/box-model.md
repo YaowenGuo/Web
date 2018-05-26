@@ -20,6 +20,50 @@ element 宽度 = 内容宽度 + 内距 + 边框
 
 ***【待测试】但是对于form中部分元素还基于ID的传统的盒模型，例如input中的submit、reset、button、select等元素***
 
+#### 块级元素都具备盒子模型的特征
+
+##### 边框（一）
+盒子模型的边框就是围绕着内容及补白的线，这条线你可以设置它的粗细、样式和颜色(边框三个属性)。
+```
+div{
+    border:2px  solid  red;
+}
+div{
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+}
+```
+
+注意：
+
+1、border-style（边框样式）常见样式有：
+
+dashed（虚线）| dotted（点线）| solid（实线）。
+
+
+2、border-color（边框颜色）中的颜色可设置为十六进制颜色，如:
+
+border-color:#888;//前面的井号不要忘掉。
+
+3、border-width（边框宽度）中的宽度也可以设置为：
+
+thin | medium | thick（但不是很常用），最常还是用象素（px）。
+
+div{border-bottom:1px solid red;}
+
+
+##### 填充pandding 边界margin
+元素内容与边框之间是可以设置距离的，称之为“填充”。填充也可分为上、右、下、左(顺时针)。如下代码：
+
+div{padding:20px 10px 15px 30px;}
+
+如果上、右、下、左的填充都为10px;可以这么写
+div{padding:10px;}
+
+如果上下填充一样为10px，左右一样为20px，可以这么写：
+div{padding:10px 20px;}
+
 ## css3 盒模型属性
 
 标准的浏览器中，盒模型的高度和宽度仅仅包含了内容的宽度，出去了边框和内边距两个区域，这位Web设计处理效果增加了很多麻烦。为了解决这个问题，CSS3增添了一个盒模型属性box-zizing，能够实现定义盒模型尺寸解析方式。语法如下：
@@ -112,3 +156,88 @@ flex-box 由于出现的较晚，在浏览器中经历了一个快速发展过
 - 看到 `display: flex` 或者使用 `flex-{*}` 属性，说经是当前规范，也就是W3C 标注规范版本。
 
 规范已经确定下来了，只需要使用规范版本即可。
+
+## 使用伸缩布局
+
+### 伸缩容器的设置
+#### display: flex|inline-flex 伸缩容器
+
+想要市容伸缩布局，只需要设置外部用于包裹内容的标签的display属性即可。
+- flex: 将容器设置为块伸缩容器
+- inline-flex: 将容器设置为内联伸缩容器
+
+注意: css的 columns 在伸缩容器上没有效果，floa、clear、vertical-align在伸缩项目上没有效果。
+
+#### flex-direction 伸缩流方向
+ 用于创建伸缩主轴，从而控制了伸缩项目在容器中摆放的方向。
+
+ - row: （默认值）在 ltr 排版方式下，从左向右排列；在 rtl 排版方式下，从右向左排列。
+ - row-reverse: 与row 排列方式相反，在 ltr 排版方式下，从右想左排列；在 rtl 排版方式下，从左向右排列。
+ - column: 从上到下排列
+ - column-reverse: 从下到上排列
+
+#### 伸缩换行 flex-wrap 伸缩换行
+flex-wrap 属性用于定义伸缩容器是单行显示还是多行显示，侧轴方向决定了新行的堆叠方向。
+
+- no-wrap: 单行显示
+- wrap: 多行显示
+- wrap-reverse: 多行显示，显示方向与排版方向相反。让伸缩项目在侧轴方向的start和end翻转。
+
+#### flex-flow 伸缩流方向与换行的缩写
+
+flex-flow: <flex-direction> || <flex-wrap>
+
+#### justify-content 主轴对齐方式
+ 定义伸缩项目沿着主轴线的对齐方式。当一行的所有项目都不能伸缩，或伸缩项目达到最大数目时，这一属性才会对伸缩容器额外空间进行分配。
+- flex-start: 向一行的起始位置靠齐
+- flex-end: 向一行的结束位置靠齐
+- center: 向一行的中间位置靠齐
+- space-between: 伸缩项目会平均地分配在项目之间的位置。第一个项目在一行的开始位置，最后一个项目在一行的结束位置。
+- space-around: 伸缩项目会平均地分配在每隔一个项目两侧的位置。两端会保留一半的空间。
+
+#### align-items 侧轴对齐方式
+
+ 调整伸缩项目在侧轴的对齐方式
+- flex-start: 伸缩项目在行内靠近侧轴的起始方向对齐
+- flex-end: 伸缩项目在行内靠近侧轴的结束方向对齐
+- center: 伸缩项目在行内靠近中间对齐
+- base-line: 伸缩项目靠近伸缩项目设置的基准线对齐
+- stetch: （默认值) 伸缩项目将拉伸填充整个侧轴的行。此值会使用项目的外边距。 盒的项目在遵照尺寸属性限制（min/max-width/height）的情况下尽可能接近所在行的尺寸，
+
+#### align-content 行堆叠方式
+当伸缩容器的侧轴方向上还有额外空间时，align-content 用于调整伸缩行的对齐方式。它会更改 flex-wrap 的行为。
+
+- flex-start: 各行向伸缩容器的起始位置堆叠
+- flex-end: 各行向伸缩容器的结束位置堆叠
+- center: 各行向侧轴的中间位置堆叠
+- space-between: 侧轴方向上的剩余空间均匀分配在行之间的位置
+- space-around: 侧轴方向上的剩余空间均匀分配在行两则的位置。
+- stretch: 默认值，各行会伸展以占用额外空间。
+
+### 伸缩项目的设置
+
+#### align-self
+ailgn-self 属性和 align-items 属性的作用和值都一样，用于调整伸缩项目在侧轴的对齐方式。ailgn-self 应用于单个项目，以覆盖整体的对齐方式。如果没有声明，则其值继承自 align-items 属性。
+
+如果伸缩项目的任一项侧轴方向上的外边距设置为 auto，则 align-self 没有效果。
+
+#### flex 伸缩性
+
+让伸缩项目的宽度或高度的伸缩比例、伸缩基准值，以自动填充伸缩容器额外的空间。伸缩容器会按照伸缩项目设置的扩展比率分配额外空间，也会按照伸缩比率缩小伸缩项目以避免伸缩项目溢出容器。
+flex: none | [<flex-grow> <flex-shrink>? || <flex-bisis>]
+
+当一个项目是伸缩项目时，flex将代替主轴长度属性决定项目的主轴长度。若元素不是伸缩项目，则 flex 没有效果。
+
+- flex-grow: 数字，用于设置伸缩项目在行中所占的比例，如果每个项目都这只为1，每个伸缩项目将占有大小相等的额外空间。如果一个伸缩项目的 flex-grow 设置为2，那它占有的额外空间将是其它项目的2倍。
+- flex-shrink: 数字，定义伸缩项目的收缩能力。
+- flex-basis: 用于设置伸缩基准值（和width值格式一致），即参与计算的主轴长度。默认值为 auto。如果 flex 省略此部件，则 flex-basis 被设置为0，此时伸缩项目最小为0。如果设置为 auto，则此项目的主轴长度是with值。
+
+flex 设置为none时，相当于 flex-grow:0; flex-shink:0; flex-basis: auto。
+
+- flex: 0 auto和flex: initial 与 flex: 0, 1, auto 作用相同。这也是 flex 的初始值。根据 width/height 属性决定项目尺寸。
+- flex: auto 与 flex: 1 1 auto 效果相同。
+
+#### order 显示顺序
+ 默认状态下，元素按照文档流的顺序显示。在伸缩布局中，项目可以按照 order 属性分配到的值，排序显示。 伸缩项目会按照序号从小到大的顺序排列，相同工号的项目将按照文档流的排序排列。
+
+ 
