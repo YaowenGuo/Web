@@ -37,3 +37,5 @@ show warnings;
 > 查看更多show信息
 
 show help;
+
+show variables like "%time_zone%";

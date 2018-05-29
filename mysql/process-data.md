@@ -10,6 +10,10 @@
 concatenate field
 concate 接受任意多个字符串或者字段参数，将它们按照先后顺序连接成一个字符串返回。
 
+MySQL 将查询出来的一列数据拼装成一个字符串
+使用GROUP_CONCAT函数。  
+SELECT GROUP_CONCAT(查询的字段 separator ',') FROM table  
+
 ## 删除两端内容
 
 trim(),ltrim(),rtrim()
