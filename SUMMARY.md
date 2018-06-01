@@ -30,3 +30,4 @@
   * [process data](mysql/process-data.md)
   * [subquery](mysql/subquery.md)
   * [Full text search](mysql/full-text-search.md)
+  * [insert](mysql/insert.md)
