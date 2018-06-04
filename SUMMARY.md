@@ -31,3 +31,4 @@
   * [subquery](mysql/subquery.md)
   * [Full text search](mysql/full-text-search.md)
   * [insert](mysql/insert.md)
+  * [update and delete](mysql/update-and-delete.md)

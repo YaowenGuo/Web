@@ -55,6 +55,20 @@ month()
 year()
 now()
 
+> long 转 timestamp：FROM_UNIXTIME
+
+示例：
+
+FROM_UNIXTIME(1249488000)
+
+
+> timestamp转long：UNIX_TIMESTAMP
+
+示例：
+
+UNIX_TIMESTAMP(buytime)
+
+
 ***= 符号可以比较日期，这是因为查出的结果也是按照字符串获取的。
 也能使用 between - and - 进行区间比较***
 
