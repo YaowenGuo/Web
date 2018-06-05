@@ -19,6 +19,7 @@
   * [text](css3/text.md)
   * [gradient](css3/gradient.md)
   * [translate](css3/translate.md)
+  * [transition](css3/transition.md)
 * CSS 层叠样式表 \(Cascading Style Sheets\)
   * [继承、层叠、特殊性、重要性](css-ceng-die-yang-shi-biao-cascading-style-sheets/ji-cheng-3001-ceng-die.md)
   * [居中](css-ceng-die-yang-shi-biao-cascading-style-sheets/ju-zhong.md)
