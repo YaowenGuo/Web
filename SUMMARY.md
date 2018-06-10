@@ -38,3 +38,4 @@
   * [update and delete](mysql/update-and-delete.md)
   * [create and update table](mysql/create-update-table.md)
   * [view](mysql/view.md)
+  * [stored procedure](mysql/stored-procedure.md)
