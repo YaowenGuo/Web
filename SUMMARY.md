@@ -39,3 +39,4 @@
   * [create and update table](mysql/create-update-table.md)
   * [view](mysql/view.md)
   * [stored procedure](mysql/stored-procedure.md)
+  * [cursor](mysql/mysql/cursor.md)
