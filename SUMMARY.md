@@ -42,3 +42,4 @@
   * [cursor](mysql/cursor.md)
   * [trigger](mysql/trigger.md)
   * [transaction processing](mysql/transaction.md)
+  * [international and local](mysql/international-and-local.md)
