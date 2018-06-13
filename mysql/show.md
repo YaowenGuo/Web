@@ -39,3 +39,16 @@ show warnings;
 show help;
 
 show variables like "%time_zone%";
+
+> 查看当前设置
+可用于系统优化
+
+SHOW VARIABLES；
+SHOW STATUS;
+
+SHOW PROCESSLIST;
+
+
+KILL process_id;
+
+EXPLAIN sql_command; 解释如何执行一条 SELECT 语句。

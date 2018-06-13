@@ -28,7 +28,6 @@
   * [居中](css-ceng-die-yang-shi-biao-cascading-style-sheets/ju-zhong.md)
   * [QA](css-ceng-die-yang-shi-biao-cascading-style-sheets/qa.md)
 * mysql
-  * [musqldump](mysql/data_export.md)
   * [show message](mysql/show.md)
   * [select](mysql/select.md)
   * [process data](mysql/process-data.md)
@@ -43,3 +42,5 @@
   * [trigger](mysql/trigger.md)
   * [transaction processing](mysql/transaction.md)
   * [international and local](mysql/international-and-local.md)
+  * [safe](mysql/safe.md)
+  * [musqldump](mysql/data_export.md)
