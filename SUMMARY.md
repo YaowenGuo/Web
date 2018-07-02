@@ -27,7 +27,7 @@
   * [继承、层叠、特殊性、重要性](css-ceng-die-yang-shi-biao-cascading-style-sheets/ji-cheng-3001-ceng-die.md)
   * [居中](css-ceng-die-yang-shi-biao-cascading-style-sheets/ju-zhong.md)
   * [QA](css-ceng-die-yang-shi-biao-cascading-style-sheets/qa.md)
-* mysql
+* [mysql](mysql/about.md)
   * [show message](mysql/show.md)
   * [select](mysql/select.md)
   * [process data](mysql/process-data.md)
@@ -44,3 +44,11 @@
   * [international and local](mysql/international-and-local.md)
   * [safe](mysql/safe.md)
   * [musqldump](mysql/data_export.md)
+* web search
+  * [SEO](web-search/seo.md)
+  * [Facebook track](web-search/facebook-track.md)
+  * [301](web-search/redirect.md)
+  * [app 排名](web-search/app-index.md)
+  * [rebots.txt](web-search/rebots.txt.md)
+* tools
+  * [ESLint](tools/ESLint.md)

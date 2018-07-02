@@ -179,4 +179,6 @@ HTML5中变化 | 无
 
 ### audio 嵌入拼音
 
+controls="controls"
+
 ## canvas 嵌入图形

@@ -5,8 +5,8 @@
     display: block;
     clear: left;
     text-align: center;
-    
-    
+
+
 ##### 行内元素
 水平居中设置-行内元素
 我们在实际工作中常会遇到需要设置水平居中的场景，比如为了美观，文章的标题一般都是水平居中显示的。
@@ -19,7 +19,7 @@ html代码：
 ```
 <body>
   <div class="txtCenter">我想要在父容器中水平居中显示。</div>
-  <div class="imgCenter"><img src="http://img.mukewang.com/52da54ed0001ecfa04120172.jpg" /> 
+  <div class="imgCenter"><img src="http://img.mukewang.com/52da54ed0001ecfa04120172.jpg" />
   </div>
 </body>
 
@@ -47,7 +47,7 @@ css代码：
 满足定宽和块状两个条件的元素是可以通过设置“左右margin”值为“auto”来实现居中的。我们来看个例子就是设置 div 这个块状元素水平居中：
 
 html代码：
-
+```
 <body>
   <div>我是定宽块状元素，哈哈，我要水平居中显示。</div>
 </body>
@@ -55,17 +55,17 @@ css代码：
 
 <style>
 div{
-    border:1px solid red;/*为了显示居中效果明显为 div 设置了边框*/
-    
-    width:200px;/*定宽*/
+    border:1px solid red;/* 为了显示居中效果明显为 div 设置了边框 */
+
+    width:200px; /* 定宽 */
     margin:20px auto;/* margin-left 与 margin-right 设置为 auto */
 }
 
 </style>
-
+```
 ##### 不定宽块状元素
 
-###### 
+######
 在实际工作中我们会遇到需要为“不定宽度的块状元素”设置居中，比如网页上的分页导航，因为分页的数量是不确定的，所以我们不能通过设置宽度来限制它的弹性。(不定宽块状元素：块状元素的宽度width不固定。)
 
 不定宽度的块状元素有三种方法居中（这三种方法目前使用的都很多）：
@@ -165,7 +165,7 @@ css代码：
 
 我们可以这样理解：假想ul层的父层（即下面例子中的div层）中间有条平分线将ul层的父层（div层）平均分为两份，ul层的css代码是将ul层的最左端与ul层的父层（div层）的平分线对齐；而li层的css代码则是将li层的平分线与ul层的最左端（也是div层的平分线）对齐，从而实现li层的居中。
 
- 
+
 
 代码如下：
 ```
@@ -192,7 +192,7 @@ css代码：
     list-style:none;
     margin:0;
     padding:0;
-    
+
     position:relative;
     left:-50%;
 }
@@ -290,9 +290,9 @@ css代码：
 #### 隐性改变display类型
 有一个有趣的现象就是当为元素（不论之前是什么类型元素，display:none 除外）设置以下 2 个句之一：
 
- 1. position : absolute 
+ 1. position : absolute
 
- 2. float : left 或 float:right 
+ 2. float : left 或 float:right
 
 简单来说，只要html代码中出现以上两句之一，元素的display显示类型就会自动变为以 display:inline-block（块状元素）的方式显示，当然就可以设置元素的 width 和 height 了，且默认宽度不占满父元素。
 

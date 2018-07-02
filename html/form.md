@@ -248,6 +248,9 @@ html新增  | 否
 HTML5中变化 | 无
 默认样式   | legend {display: block; panding-start: 2px; panding-end: 2px; border: none; }
 
+```
+```
+
 ## button 按钮
 
 button不仅可以用在表单中，还可以用在表单之外，作为普通button使用。button的type属性支持三种值，其中submit和reset用于表单中。而button则用于表单之外作为普通的button使用。
