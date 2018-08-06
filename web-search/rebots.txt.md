@@ -1,80 +1,38 @@
-User-agent: *     允许所有访问来源
-Disallow: /name?*   禁止所有来源访问爬取  /name url 路径任何参数的访问
-Disallow: /ask/ask?* 禁止所有来源访问爬取 url 是 /ask/ask 所有参数的访问
-Disallow: /qa/avatar/* 禁止所有来源访问爬取 url 以 /qa/avatar/ 开头的页面
+既然项目主要是被谷歌收录的。该文档主要参考谷歌给出的 [Robots.txt](https://developers.google.com/search/reference/robots_txt?hl=zh-cn) 规范。
 
-允许 Twitter 爬取 /name 路劲下所有参数的页面
-User-agent: Twitterbot
-Allow: /name?*
+Robots.txt 的全称是“网络爬虫排除标准”（Robots Exclusion Protocol），网站通过Robots协议告诉搜索引擎哪些页面可以抓取，哪些页面不能抓取。
 
-禁止 alexa 爬取网站
-User-agent: ia_archiver
-Disallow: /
+- 只会对遵守该协议的正规爬虫有效，并不能阻止恶意爬取、访问。
+- robots.txt 文件必须位于主机的顶级目录中（即网站的根目录下），可通过http 和 https 的get请求，无条件的请求到。
 
-禁止 DotBot 爬取网站
-User-agent: DotBot
-Disallow: /
+- (google 专用的，其它爬虫不一定接受，对于咱们的网站没有什么作用)Google 同样接受和遵循 FTP 网站的 robots.txt 文件。用户匿名登录后，可通过 FTP 协议访问基于 FTP 的 robots.txt 文件。
+- 与其他网址一样，robots.txt 文件的网址是 ***区分大小写*** 的。
 
-禁止 AhrefsBot 爬取网站
-User-agent: AhrefsBot
-Disallow: /
+## 文件格式
 
-以下都是被禁止爬取网站的爬虫。
+- 预期的文件格式是 UTF-8 编码的纯文本。文件包含由 CR（Carriage Return 回车）、CR/LF （Line Feed 换行）或 LF 分隔的多个记录（行）。
+
+```
+Unix/Linux系统里，每行结尾只有“<换行>”，即"\n"
+
+Windows系统里面，每行结尾是“<换行><回车 >”，即“\n\r”
+
+Mac系统里，每行结尾是“<回车>”，即"\r"。
+
+关于回车和换行的问题是打字机时代遗留下来的，还好 robots.txt 都是支持的。
+```
 
 
-User-agent: MauiBot
-Disallow: /
+- 系统将只考虑有效的记录，而忽略其他所有内容。例如，如果获得的文档为 HTML 网页，则系统只会考虑网页中有效的文本行，而忽略其他内容，并且既不显示警告也不报告错误。
 
-User-agent: MJ12bot
-Disallow: /
+- 如果因为使用某种字符编码而使用了不属于 UTF-8 子集的字符，则可能导致文件内容解析错误。
 
-User-agent: SemrushBot
-Disallow: /
+- 系统会忽略 robots.txt 文件开头可选的 Unicode BOM（字节顺序标记）。
 
-User-agent: SemrushBot-SA
-Disallow: /
+- 每个记录均由一个字段、一个冒号和一个值组成。空格是可选的（但建议使用空格以提高可读性）。您可以使用“#”字符在文件中任何位置添加注释，系统会将所有位于注释开头和记录结尾之间的内容视为注释，并且忽略这部分内容。常见格式为“<field>:<value><#optional-comment>”。系统会忽略记录开头和结尾的空格。
 
-user-agent: NTENTbot
-Disallow: /
+- <field> 元素区分大小写。<value> 元素可能会区分大小写，具体取决于 <field> 元素。
 
-User-agent: spbot
-Disallow: /
+- 我们并未定义如何处理存在轻微错误/拼写错误的 <field> 元素（例如，“user-agent”错写成了“useragent”），而某些用户代理可能会将这些元素视为正确的指令。
 
-User-agent: BLEXBot
-Disallow: /
-
-User-agent: Cliqzbot
-Disallow: /
-
-User-agent: Domain Re-Animator Bot
-Disallow: /
-
-User-agent: MegaIndex.ru
-Disallow: /
-
-User-agent: 008
-Disallow: /
-
-User-agent: Fasterfox
-Disallow: /
-
-User-agent: Caliperbot
-Disallow: /
-
-User-agent: Screaming Frog SEO Spider
-Disallow: /
-
-User-agent: SiteBot
-Disallow: /
-
-User-agent: grapeshot
-Disallow: /
-
-User-agent: HubSpot Links Crawler 1.0
-Disallow: /
-
-User-agent: HubSpot Links Crawler 2.0
-Disallow: /
-
-User-agent: HubSpot
-Disallow: /
+- 每个抓取工具都会设定文件大小的上限，并忽略超过该上限的内容。目前，Google 将该上限设为 500kb。

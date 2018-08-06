@@ -25,6 +25,6 @@ WHERE ...;
 
 # 清空表
 
-RRUNCATE TABEL table_name;
+TRUNCATE TABEL table_name;
 
 清空整张表，比 delete 更快，不会逐行扫描。

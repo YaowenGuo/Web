@@ -22,6 +22,36 @@ $ mysqldump -h主机ip -u用户名 -p密码（也可不输入） 数据库名   
 
 $ gunzip < backupfile.sql.gz | mysql -u用户名 -p密码（也可不输入） 数据库名
 
+## 导出类似表名的表
+
+```
+ mysqldump ecos $(mysql -D ecos -Bse "SHOW TABLES LIKE 'tbl_user_%'") > /data/tbl_user_alltables.sql
+```
+
+## 恢复数据
+
+3）恢复，导入数据库数据：
+
+将导出的本地文件导入到指定数据库
+
+1、系统命令行
+
+格式：mysql -h链接ip -P(大写)端口 -u用户名 -p密码 数据库名 < d:XX.sql(路劲)
+
+mysql -uusername -ppassword db1 <tb1tb2.sql
+
+2、或mysql命令行
+
+mysql>
+
+user db1;
+
+source tb1_tb2.sql;
+
+3、恢复整个数据库的方法：
+
+mysql -u  b_user -h 101.3.20.33 -p'H_password' -P3306   < all_database.sql
+
 ## 拷贝所有数据
 
 mysqlhotcopy 从一个数据库复制所有数据。
