@@ -33,6 +33,8 @@ ALERT TABLE table_name
 ADD column_name <type> [AFTER|BEFORE 原有列名], ...
 FOREIGN KEY(column_name, ...) FORERENCES order (order_num);
 
+ALTER TABLE `panda_site`.`panda_new_oauth_users`
+MODIFY COLUMN `background` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT ‘https://www.pandarowcdn.com/user/background/user-default-bg.jpg’ AFTER `firebase_token`;
 
 删除
 
