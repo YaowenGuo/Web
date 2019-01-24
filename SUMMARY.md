@@ -56,6 +56,7 @@
   * [app 排名](web-search/app-index.md)
   * [rebots.txt](web-search/rebots.txt.md)
 * Nginx
-  
+
 * tools
   * [ESLint](tools/ESLint.md)
+  * [npm](tools/npm.md)
