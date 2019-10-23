@@ -65,6 +65,12 @@
 - line-through: 删除线
 - blink: 闪烁线
 
+取消 a 标签的下划线
+
+```css
+a{ text-decoration:none}
+```
+
 ### text-indent 文本首行缩进
 
 长度单位或百分比
@@ -155,3 +161,23 @@ body{
     font:12px/1.5em  "宋体",sans-serif;
 }
 只是有字号、行间距、中文字体、英文字体设置。
+
+
+CSS显示指定行数文本
+
+1.单行文本溢出用省略号显示：
+
+```css
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+```
+
+2.多行文本溢出用省略号显示：
+
+```css
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+```

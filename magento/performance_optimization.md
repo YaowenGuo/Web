@@ -1,0 +1,5 @@
+# Performance optimization
+
+https://www.mageplaza.com/blog/magento-2-performance-optimization/
+
+

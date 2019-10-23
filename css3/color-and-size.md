@@ -131,3 +131,9 @@ span{font-size:0.8em;}
 
 p{font-size:12px;line-height:130%}
 设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。
+
+计算 calc
+
+```
+width: calc(70% - 16px);
+```

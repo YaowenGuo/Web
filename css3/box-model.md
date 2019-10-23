@@ -77,6 +77,9 @@ box-sizing: content-box | border-box | inherit
 - border-box: 让元素模型的解析改用IE传统的盒模型，元素的宽度=内边距 + 内容宽度 + 边框；高度=内边距 + 内容高度 + 边框。
 - inherit: 元素继承父元素的盒模型模式。
 
+
+> `content-box` 被称为正常盒模型，它的 `width` 和 `height` 指的是内容的宽度和高度，设置 `panding` 和 `border` 都会导致元素变大，`border-box` 被称为怪异盒模型。 在一些前端框架（如 bootstarp）中，默认启用了怪异盒模型，毕竟这样更符合人们的直观感受。
+
 ## overflow css3内容溢出属性
 在css中每一个元素都视为一个盒子，这个盒子就是一个容器。容器如果指定了固定的大小，内容过多时就会容纳不下。此时可以使用overflow属性来指定该如何显示何种容纳不下的内容。CSS3增加overflow-x和overflow-y来单独指定某个方向。
 

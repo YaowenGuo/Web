@@ -16,15 +16,26 @@ FLUSH TABLES;
 
 
 1、mysqldump 备份并压缩sql文件
+
+```bash
 $ mysqldump -h主机ip -u用户名 -p密码（也可不输入） 数据库名   | gzip > 压缩后文件位置
+```
+
+需要注意的是，这中方式导出会阻塞数据库无法访问，真正生产服务器不会使用这样使用，需要添加参数 `--single-transaction` 来避免阻塞。
+
+```bash
+mysqldump -h127.0.0.1 -u ${MYSQL_NAME} -p${MYSQL_PASS} -P${MYSQL_PORT} --single-transaction ${DATABASE_NAME} ${DATABASE_TABLE} | gzip -9 > ${REMOTE_DIR}/${MYSQL_BACKUP_FILE_NAME}"
+```
 
 2、mysql直接用压缩文件恢复
 
+```bash
 $ gunzip < backupfile.sql.gz | mysql -u用户名 -p密码（也可不输入） 数据库名
+```
 
 ## 导出类似表名的表
 
-```
+```bash
  mysqldump ecos $(mysql -D ecos -Bse "SHOW TABLES LIKE 'tbl_user_%'") > /data/tbl_user_alltables.sql
 ```
 
@@ -39,6 +50,12 @@ $ gunzip < backupfile.sql.gz | mysql -u用户名 -p密码（也可不输入） �
 格式：mysql -h链接ip -P(大写)端口 -u用户名 -p密码 数据库名 < d:XX.sql(路劲)
 
 mysql -uusername -ppassword db1 <tb1tb2.sql
+
+> 非阻塞导出
+
+```
+
+```
 
 2、或mysql命令行
 

@@ -43,6 +43,28 @@ HTML5中变化 | border、longdesc、name、align、hspace和vspace属性在H5�
 - width、height: 图像的尺寸。图像在HTML处理完毕后才会加载，这意味着如果省略了width和height属性，浏览器就不知道为图像留出多大的屏幕空间。造成的结果是，浏览器必须依靠图像文件本省的尺寸来确定它的尺寸，然后重定位屏幕上的内容来容纳它。这可能让用户感觉到晃动。width和height属性来告诉浏览器图像的尺寸有多大，而不是你希望它有多大，不应该使用这些属性来动态缩放图像。
 - ismap: 添加该属性，当img父元素为a标签时。给图像应用该属性给图像创建了分区响应图。图像的点击位置会附加到提交的URL上。
 
+- srcset 根据像素密度选择不同分辨率的图片
+https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img
+http://www.topfe.cn/css3/508.html
+
+如果想要根据屏幕宽度选择不同图片，这在响应式开发中用于适配 pc 和 mobel，需要用到 `<picture>` 标签
+
+```
+<picture >
+    <source srcset="images/banner_mob.png" media="(max-width: 450px)">
+    <source srcset="images/banner_pc.png">
+    <img src="images/banner_pc.jpg" class="product-list-banner"/>
+</picture>
+```
+
+src 用于在不支持 `picture` 标签的浏览器上作为默认显示。 `media` 允许使用配置查询来适配不同的屏幕尺寸。
+
+https://www.runoob.com/try/try.php?filename=tryresponsive_image_picture
+
+
+
+
+
 ## map 创建客户端分区响应图
 
 创建客户端分区响应图，当用户点击图像上的不同区域，可以让浏览器导航到不同的URL上。这一过程不需要通过服务器引导，因此需要使用元素来定义图像上的各个区域以及它们所代表的行为。

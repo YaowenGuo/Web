@@ -1,4 +1,5 @@
 #### 水平居中
+
 宽度不固定的div
 
     float: none;
@@ -63,6 +64,15 @@ div{
 
 </style>
 ```
+
+图片居中
+
+在图片外部添加一个 div， 宽度 `100%`，设置内容居中
+```html
+<div align="center"><img src="http://www.divcss5.com/img201305/divcss5-logo-201305.gif" /></div> 
+```
+
+
 ##### 不定宽块状元素
 
 ######

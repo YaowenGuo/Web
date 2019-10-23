@@ -9,7 +9,8 @@
   * [form](html/form.md)
   * [tag text](html/tag-text.md)
   * [embedded content](html/embedded-content.md)
-* [CSS3 (Cascading Style Sheets)](cascading-style-sheets.md)
+* [CSS3 (Cascading Style Sheets 层叠样式表)](css3/cascading-style-sheets.md)
+  * [继承、层叠、特殊性、重要性](css3/inherit-and-casecading.md)
   * [selector](css3/selecter.md)
   * [box model](css3/box-model.md)
   * [layout](css3/layout.md)
@@ -23,10 +24,10 @@
   * [animation](css3/animation.md)
   * [media type](css3/media-type.md)
   * [font](css3/font.md)
-* CSS 层叠样式表 \(Cascading Style Sheets\)
-  * [继承、层叠、特殊性、重要性](css-ceng-die-yang-shi-biao-cascading-style-sheets/ji-cheng-3001-ceng-die.md)
-  * [居中](css-ceng-die-yang-shi-biao-cascading-style-sheets/ju-zhong.md)
-  * [QA](css-ceng-die-yang-shi-biao-cascading-style-sheets/qa.md)
+
+* [居中](some_topic/ju-zhong.md)
+* [QA](some_topic/qa.md)
+  
 * [mysql](mysql/about.md)
   * [show message](mysql/show.md)
   * [select](mysql/select.md)
@@ -55,8 +56,39 @@
   * [301](web-search/redirect.md)
   * [app 排名](web-search/app-index.md)
   * [rebots.txt](web-search/rebots.txt.md)
-* Nginx
+* [Nginx](nginx/README.md)
+
+* [Laravel](laravel.md)
+  * [composer](laravel/composer.md)
+  * [目录结构和路由](laravel/mu-lu-jie-gou-he-lu-you.md)
+  * [控制器](laravel/kong-zhi-qi.md)
+  * [视图](laravel/shi-tu.md)
+  * [Model](laravel/model.md)
+  * [数据库](laravel/shu-ju-ku.md)
+  * [View的Blade模板引擎](laravel/viewde-bland-mo-ban-yin-qing.md)
+  * [Laravel-admin-表单](laravel/biao-dan.md)
+  * [Artisan Console](laravel/artisan-console.md)
+  * [用户认证Auth](laravel/yong-hu-ren-zheng-auth.md)
+  * [数据迁移](laravel/shu-ju-qian-yi.md)
+  * [中间件MiddleWare](laravel/zhong-jian-jian-middleware.md)
+  * Request and Response
+    * [Request](laravel/request/request.md)
 
 * tools
   * [ESLint](tools/ESLint.md)
   * [npm](tools/npm.md)
+  * [PHP debug](tools/php_debug_config.md)
+
+* Magento
+  * [插件开发](magento/extension/README.md)
+  * [Install and remove expansion](magento/install_and_remove_expansion.md)
+  * [Google Analytics](magento/google_analytics.md)
+  * [env configuration](magento/env.md)
+  * [mode switching](magento/mode_switching.md)
+  * [Cagetories](magento/remove_left_sidebar.md)
+  * [Performance optimization](magento/performance_optimization.md)
+  * [Shopping Cart Price Rules](shopping_cart_price_rules.md)
+  * [Add Attribute for product](magento/product_attribute.md)
+  * [Online](magento/online.md)
+
+* [AMP](AMP/README.md)

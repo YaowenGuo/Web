@@ -41,6 +41,8 @@ html,
 
 
 # CSS实现div内文字显示两行，超出两行部分省略号显示
+
+
 https://www.cnblogs.com/zpsong/p/5406494.html
 
 在搭建前台文章列表中，需要实现div内文字显示两行，超出的则省略号显示。
@@ -63,3 +65,22 @@ display: -webkit-box;
 $(document).ready(function() {
 　　$('.ellipsis').ellipsis();
 }
+
+## 包裹
+
+> 内部浮动时，外部 div 不能包裹内部
+
+解决方法 1， 在 浮动的 div 最后面增加一个空的元素，取消浮动
+
+```html
+<div class="out">
+  <div class="inner">a</div><div class="inner">a</div>
+  <div style="clear:both;"></div><!-- 加入不浮动元素 -->
+</div>
+```
+
+方法 2
+
+设置外部div的css属性overflow:hidden;zoom:1;这里需要注意，zoom是IE6专有属性设置zoom是为了兼容IE6
+
+

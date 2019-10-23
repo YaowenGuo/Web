@@ -1,8 +1,12 @@
 主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。
 
 使用CSS样式的一个好处是通过定义某个样式，可以让不同网页位置的文字有着统一的字体、字号或者颜色等。
-#### css 位置
-例如给html的某个标签加样式，直接在<style type="text/css"> 中编写。例如给标签p添加样式。
+
+
+## css 位置
+
+例如给html的某个标签加样式，直接在 `<style type="text/css">` 中编写。例如给标签p添加样式。
+
 ```html
 <!DOCTYPE HTML>
 <html>
@@ -23,7 +27,8 @@ p{
 </html>
 ```
 
-##### 内联式
+### 内联式
+
 内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：
 ```
 <p style="color:red">这里文字是红色。</p>
@@ -35,40 +40,47 @@ p{
 
 css 样式由选择符和声明组成，而声明又由属性和值组成，如下图所示：
 
-![](/assets/52fde5c30001b0fe03030117.jpg)
-##### 嵌入式
-嵌入式是使用单独的<style type="text/css"> </style> 标签内写样式。例如给span标签加样式。
-```
+![样式结构](images/52fde5c30001b0fe03030117.jpg)
+
+### 嵌入式
+嵌入式是使用单独的 `<style type="text/css"> </style>` 标签内写样式。例如给 span 标签加样式。
+
+```html
 <style type="text/css">
 span{
 color:red;
 }
 </style>
 ```
-嵌入式css样式必须写在<style></style>之间，并且一般情况下嵌入式css样式写在<head></head>之间。如右边编辑器中的代码。
-##### 外部css样式，单独写在一个文件中
-在<head>内（不是在<style>标签内）使用<link>标签将css样式文件链接到HTML文件内，如下面代码：
+
+嵌入式css样式必须写在 `<style></style>` 之间，并且一般情况下嵌入式css样式写在 `<head></head>` 之间。如右边编辑器中的代码。
+
+### 外部css样式，单独写在一个文件中
+
+在 `<head>` 内（不是在`<style>`标签内）使用`<link>`标签将 css 样式文件链接到 HTML 文件内，如下面代码：
+
+```html
 <link href="base.css" rel="stylesheet" type="text/css" />
+```
 
 注意：
 
-1、css样式文件名称以有意义的英文字母命名，如 main.css。
+1、css 样式文件名称以有意义的英文字母命名，如 main.css。
 
 2、rel="stylesheet" type="text/css" 是固定写法不可修改。
 
-3、<link>标签位置一般写在<head>标签之内。
+3、 `<link>` 标签位置一般写在 `<head>` 标签之内。
 
 ##### 三种方法的优先级
 距离越近，优先级越高。所以
 内联式 > 嵌入式 > 外部式
 当属性在不同优先级重复时，优先级高的有效。
 
-但是嵌入式>外部式有一个前提：嵌入式css样式的位置一定在外部式的后面。如右代码编辑器就是这样，<link href="style.css" ...>代码在<style type="text/css">...</style>代码的前面（实际开发中也是这么写的）。感兴趣的小伙伴可以试一下，把它们调换顺序，再看他们的优先级是否变化。
+但是嵌入式>外部式有一个前提：嵌入式css样式的位置一定在外部式的后面。如右代码编辑器就是这样，`<link href="style.css" ...>` 代码在 `<style type="text/css">...</style>` 代码的前面（实际开发中也是这么写的）。感兴趣的小伙伴可以试一下，把它们调换顺序，再看他们的优先级是否变化。
 例如如下的写法将导致外部优先：
 
-```
+```html
 <style type="text/css">
-
     span{
        color:red;
     }
@@ -101,4 +113,4 @@ E  在同一组属性设置中标有“!important”规则的优先级最大
 
 #### 注释
 
-用/*注释语句*/
+用 `/*注释语句*/` 
