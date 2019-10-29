@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [HTML5](html.md)
+* [HTML5](html/html.md)
   * [head](html/head.md)
   * [document structure](html/document-structure.md)
   * [organization content](html/organization-content.md)
@@ -44,7 +44,7 @@
   * [transaction processing](mysql/transaction.md)
   * [international and local](mysql/international-and-local.md)
   * [safe](mysql/safe.md)
-  * [musqldump](mysql/data_export.md)
+  * [mysqldump](mysql/data_export.md)
   * [Q&A](mysql/question.md)
   * [sql_mode](mysql/sql_mode.md)
 * Progressive Web App
@@ -81,6 +81,7 @@
 
 * Magento
   * [插件开发](magento/extension/README.md)
+  * [常用指令](magento/useful_command.md)
   * [Install and remove expansion](magento/install_and_remove_expansion.md)
   * [Google Analytics](magento/google_analytics.md)
   * [env configuration](magento/env.md)
@@ -90,5 +91,12 @@
   * [Shopping Cart Price Rules](shopping_cart_price_rules.md)
   * [Add Attribute for product](magento/product_attribute.md)
   * [Online](magento/online.md)
+  * [Shopping cart price rule](magento/shopping_cart_price_rules.md)
 
 * [AMP](AMP/README.md)
+
+* [JQuery](jquery/README.md)
+  * [样式篇](jquery/yang-shi-pian.md)
+  * [样式操作](jquery/yang-shi-cao-zuo.md)
+  * [DOM操作](jquery/domcao-zuo.md)
+  * [Event](jquery/event.md)

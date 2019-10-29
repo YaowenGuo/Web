@@ -51,7 +51,7 @@ php bin/magento module:status
 注册新模块
 
 ```
-php bin/magento module:enable chichihaha_Google_Analytics
+php bin/magento module:enable chichihaha_Google_Analytics --clear-static-content
 ```
 
 禁用模块， 有一些模块需要在禁用时将安装时的静态文件也清除，添加 `--clear-static-content` 参数
